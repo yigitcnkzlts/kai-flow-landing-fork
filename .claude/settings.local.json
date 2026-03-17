@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next build:*)",
+      "Bash(powershell -Command \"Get-Content openai.svg -Raw | Select-Object -First 1\")",
+      "Bash(powershell -Command:*)",
+      "Bash(npm run build)"
+    ]
+  }
+}

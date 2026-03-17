@@ -1,0 +1,169 @@
+{
+  "header": {
+    "features": "Özellikler",
+    "integrations": "Entegrasyonlar",
+    "content": "İçerik",
+    "faq": "SSS",
+    "contributors": "Katkıda Bulunanlar",
+    "bookDemo": "Demo Talep Et",
+    "comingSoon": "Yakında",
+    "starOnGithub": "GitHub'da Yıldız Ver"
+  },
+  "hero": {
+    "title": "KAI Flow",
+    "subtitle": "Yapay Zeka Ajanlarını ve Dinamik İş Akışlarını Görsel Olarak Orkestre Edin",
+    "description": "KAI Flow, karmaşık yapay zeka iş akışlarını tasarlamak ve ölçeklendirmek için geliştirilmiş düşük kodlu bir platformdur. RAG pipeline'larını, hafıza yönetimini ve araç çağrılarını görsel bir arayüzde birleştirerek; gereksiz kod yazmadan akıllı asistanlar ve otomatize veri pipeline'ları inşa edin",
+    "github": "GitHub",
+    "bookDemo": "Demo Talep Et",
+    "comingSoon": "Yakında"
+  },
+  "features": {
+    "badge": "KAI Flow Özellikleri",
+    "heading": "Akıllı Yapay Zeka İş Akışı Otomasyon Platformu",
+    "description": "Güçlü otomasyon yetenekleriyle yapay zeka ajanları oluşturun, dağıtın ve yönetin.",
+    "tabs": {
+      "chat": {
+        "label": "Sohbet",
+        "badge": "Yapay Zeka İletişimi",
+        "title": "Akıllı Diyalog Ajanları ve Sohbet Arayüzleri",
+        "description": "Kanvas üzerinde LLM node'larını, hafızayı ve araç çağrılarını bağlayarak chatbot'lar ve asistanlar oluşturun. Gömülebilir widget veya API endpoint olarak yayına alın.",
+        "button": "Sohbeti Deneyin"
+      },
+      "export": {
+        "label": "Dışa Aktar",
+        "badge": "İş Akışı Dışa Aktarımı",
+        "title": "Agent konfigürasyonlarını paylaşın ve yeniden kullanın.",
+        "description": "Karmaşık ajan grafiklerinizi taşınabilir JSON formatında dışa aktarın. İş akışlarınızı takımlar arasında paylaşın veya farklı projeler arasında kolayca taşıyın. Ajanlarınız, tüm konfigürasyon ve çalışma mantıklarıyla birlikte her yere sizinle gelir.",
+        "button": "Konfigürasyonu Dışa Aktar"
+      },
+      "rag": {
+        "label": "RAG",
+        "badge": "Bilgi Destekli",
+        "title": "Özel Verilerle Desteklenen Semantik Bilgi Yönetimi",
+        "description": "PostgreSQL ve pgvector tabanlı yerleşik vektör veritabanı desteğiyle agent'larınıza kendi dökümanlarınızı (PDF, Web, Metin) öğretin. Entegre document loader ve splitter bileşenleriyle, saniyeler içinde teknik bilgi tabanı oluşturun ve sorgulayın.",
+        "button": "RAG Kurun"
+      },
+      "lowCode": {
+        "label": "Düşük Kod",
+        "badge": "Görsel Oluşturucu",
+        "title": "Görsel Kanvas Üzerinde AI Orkestrasyonu",
+        "description": "Karmaşık LLM zincirlerini, mantıksal dallanmaları ve döngüsel süreçleri sürükle-bırak yöntemiyle tasarlayın. İleri düzey senaryolar için özel Python, JavaScript kod blokları ekleyerek esnekliğinizi koruyun.",
+        "button": "Oluşturmaya Başlayın"
+      }
+    }
+  },
+  "integrations": {
+    "ecosystem": "Ekosistem",
+    "heading": "Yapay zekayı kendi iş akışlarınıza",
+    "headingHighlight": "entegre edin.",
+    "description": "Yapay zekayı işletmenizde gerçekten işler hale getirmenin hızlı yolu",
+    "aiIntegrations": "Node Tipi",
+    "businessCases": "Çoklu LLM Desteği",
+    "setupTime": "Dağıtım",
+    "setupTimeValue": "Docker Hazır",
+    "exploreAll": "Tüm entegrasyonları keşfedin"
+  },
+  "content": {
+    "heading": "Görsel Tasarımın Ötesinde: Kurumsal AI Orkestrasyonu Runtime Sistemi",
+    "description1": "KAI Flow sadece bir görsel tasarım aracı değil,",
+    "descriptionHighlight": "AI ajanlarınızı en yüksek performansla yürüten gelişmiş bir runtime altyapısıdır.",
+    "description2": "Zamanlayıcılar, olay bazlı tetikleyiciler, hibrit RAG süreçleri ve çok adımlı muhakeme yetenekleri sistemin merkezinde yer alır.",
+    "description3": "Dahili operasyon araçları, otonom müşteri asistanları veya veri pipeline'larını aynı ortak kanvas üzerinde inşa edin ve orkestre edin.",
+    "realtimeTriggers": "Reaktif ve Olay Güdümlü Altyapı",
+    "realtimeTriggersDesc": "Kafka topic'leri, Webhook'lar veya akıllı zamanlayıcılar ile iş akışlarını otomatikleştirin. Ajanlarınız, dış dünyadaki olaylara gerçek zamanlı ve otonom tepkiler versin.",
+    "modularLogic": "LangGraph ile Durum Yönetimli (Stateful) Yürütme",
+    "modularLogicDesc": "Grafikteki her bir düğüm, LangGraph düğümlerine doğrudan eşlenir. Karmaşık döngüler, dinamik dallanmalar ve durum geçişleri üzerinde mutlak kontrole sahip olun."
+  },
+  "faq": {
+    "heading": "Sıkça Sorulan Sorular",
+    "description": "KAI Flow hakkında bilmeniz gerekenler",
+    "items": [
+      {
+        "question": "KAI Flow nedir?",
+        "answer": "KAI Flow, LangChain ve LangGraph ekosistemleri üzerine inşa edilmiş, açık kaynaklı ve kurumsal düzeyde bir AI agent orkestrasyon platformudur. Görsel bir kanvas üzerinde LLM düğümlerini, hafıza bileşenlerini ve gelişmiş tetikleyicileri (Kafka, Webhook vb.) birleştirerek, karmaşık mantıksal akışlara sahip otonom asistanları kod yazmadan (veya özel kod ekleyerek) production ortamına taşımanıza olanak tanır."
+      },
+      {
+        "question": "KAI Flow hangi LLM sağlayıcılarını destekliyor?",
+        "answer": "KAI Flow; OpenAI, Anthropic (Claude), Google Gemini, Mistral, HuggingFace ve yerel modeller dahil olmak üzere sektördeki tüm öncü LLM sağlayıcılarını destekler. Modeller doğrudan görsel arayüzden yapılandırılabilir; her adımda farklı modelleri orkestre ederek hibrit akışlar oluşturabilirsiniz."
+      },
+      {
+        "question": "KAI Flow'u kullanmak için kodlama bilgisi gerekiyor mu?",
+        "answer": "Hayır. Platformun 'low-code' felsefesi sayesinde, karmaşık iş akışlarını sürükle-bırak yöntemiyle saniyeler içinde tasarlayabilirsiniz. Ancak, ileri düzey kullanıcılar için özel Python mantığı (Custom Nodes) ekleme yeteneği de sunularak tam esneklik ve ölçeklenebilirlik sağlanır."
+      },
+      {
+        "question": "KAI Flow'da RAG nasıl çalışır?",
+        "answer": "KAI Flow, PostgreSQL ve pgvector eklentisini kullanarak yerleşik vektör veritabanı desteği sunar. PDF, Web ve metin dökümanlarını yükleyip parçalara ayıran, ardından agent'ın bu verileri sorgulamasını sağlayan eksiksiz RAG hattını (pipeline) görsel kanvas üzerinden hiçbir ek altyapı kurulumuna ihtiyaç duymadan yapılandırabilirsiniz."
+      },
+      {
+        "question": "Dağıttığım agent'lara nasıl erişirim?",
+        "answer": "Her agent iş akışına, FastAPI backend'i üzerinden REST endpoint olarak erişilebilir. Ayrıca @kaiFlow/widget npm paketi ile web sitenize gömülebilir bir sohbet widget'ı olarak da yayınlayabilirsiniz."
+      },
+      {
+        "question": "KAI Flow'a nasıl katkıda bulunabilirim?",
+        "answer": "KAI Flow açık kaynaklıdır. GitHub deposunu ziyaret ederek issue açabilir, pull request gönderebilir veya yeni node tipleri geliştirebilirsiniz. Katkı rehberi için CONTRIBUTING.md dosyasını inceleyebilirsiniz."
+      }
+    ]
+  },
+  "contributors": {
+    "heading": "Birlikte İnşa Edelim!",
+    "description": "KAI Flow'u mümkün kılan harika insanlarla tanışın.",
+    "loading": "Yükleniyor...",
+    "recentStargazers": "Son Yıldız Verenler",
+    "stargazersDescription": "Projeyi yıldızlayan herkese teşekkürler!",
+    "starOnGithub": "GitHub'da Yıldız Ver",
+    "stars": "Yıldız",
+    "stargazers": "Yıldızlayanlar",
+    "starred": "Yıldızlandı"
+  },
+  "footer": {
+    "copyright": "© {year} Kafein. Tüm hakları saklıdır",
+    "poweredBy": "Powered by"
+  },
+  "demoForm": {
+    "title": "Demo Talep Et",
+    "description": "KAI Flow yapay zekâ ile iş akışlarınızda nasıl devrim yaratabileceğimizi keşfedin. Aşağıdaki formu doldurun, ekibimiz 24 saat içinde sizinle iletişime geçecektir.",
+    "personalInfo": "Kişisel Bilgiler",
+    "companyDetails": "Şirket Bilgileri",
+    "interests": "Hangi konular ilginizi çekiyor?",
+    "tellMore": "Bize daha fazla anlatın",
+    "firstName": "Adı",
+    "lastName": "Soyadı",
+    "workEmail": "İş E-postası",
+    "jobTitle": "Pozisyon",
+    "country": "Ülke",
+    "phoneNumber": "Telefon Numarası",
+    "companyName": "Şirket Adı",
+    "companySize": "Şirket Büyüklüğü",
+    "selectSize": "Boyut seçin",
+    "companySizes": {
+      "1-10": "1-10",
+      "11-50": "11-50",
+      "51-200": "51-200",
+      "201-500": "201-500",
+      "500+": "500+"
+    },
+    "interests_options": {
+      "workManagement": "İş ve proje yönetimi",
+      "salesCRM": "Satış ve CRM",
+      "productManagement": "Ürün yönetimi",
+      "softwareDevelopment": "Yazılım geliştirme",
+      "productSoftwareDevelopment": "Ürün ve yazılım geliştirme",
+      "emailMarketing": "E-posta pazarlama",
+      "agencyFactory": "Acente Fabrikası",
+      "ticketingServiceManagement": "Biletleme ve hizmet yönetimi",
+      "other": "Diğer"
+    },
+    "tellMoreQuestion": "KAI Flow'u nasıl kullanmayı planlıyorsunuz?",
+    "tellMorePlaceholder": "Kullanım senaryonuzu, ekip büyüklüğünüzü ve mevcut zorluklarınızı bizimle paylaşın...",
+    "newsletter": "Kampanya ve yeniliklerden haberdar olmak istiyorum.",
+    "privacy": "Paylaştığım kişisel bilgilerin Aydınlatma Metni kapsamında işlenmesine izin veriyorum. İptal hakkım saklıdır.",
+    "clarificationText": "Aydınlatma Metni",
+    "recaptcha": "Bu site reCAPTCHA tarafından korunmaktadır.",
+    "privacyLink": "Gizlilik",
+    "termsLink": "Şartlar",
+    "submitButton": "Demo Talep Et",
+    "successTitle": "Başarıyla Gönderildi!",
+    "successMessage": "Talebiniz alındı. Ekibimiz 24 saat içinde sizinle görüşme sağlamak için iletişime geçecektir.",
+    "successSubtext": "KAI Flow'a ilginiz için teşekkür ederiz."
+  }
+}

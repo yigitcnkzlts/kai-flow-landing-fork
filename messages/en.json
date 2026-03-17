@@ -1,0 +1,169 @@
+{
+  "header": {
+    "features": "Features",
+    "integrations": "Integrations",
+    "content": "Content",
+    "faq": "FAQ",
+    "contributors": "Contributors",
+    "bookDemo": "Book Demo",
+    "comingSoon": "Coming Soon",
+    "starOnGithub": "Star on GitHub"
+  },
+  "hero": {
+    "title": "KAI Flow",
+    "subtitle": "Orchestrate AI Agents and Dynamic Workflows Visually",
+    "description": "KAI Flow is a low-code platform developed for designing and scaling complex AI workflows. Combine RAG pipelines, memory management, and tool calling in a visual interface; build intelligent assistants and automated data pipelines without writing redundant code.",
+    "github": "GitHub",
+    "bookDemo": "Book Demo",
+    "comingSoon": "Coming Soon"
+  },
+  "features": {
+    "badge": "KAI Flow Features",
+    "heading": "Intelligent AI Workflow Automation Platform",
+    "description": "Create, deploy, and manage AI agents with powerful automation capabilities.",
+    "tabs": {
+      "chat": {
+        "label": "Chat",
+        "badge": "AI Communication",
+        "title": "Intelligent Dialogue Agents and Chat Interfaces",
+        "description": "Connect LLM nodes, memory, and tool calls on the canvas to build chatbots and assistants. Deploy as an embeddable widget or API endpoint.",
+        "button": "Try Chat"
+      },
+      "export": {
+        "label": "Export",
+        "badge": "Workflow Export",
+        "title": "Share and reuse agent configurations.",
+        "description": "Export your complex agent graphs in portable JSON format. Share your workflows between teams or easily move them between different projects. Your agents come with you everywhere, along with all configurations and operation logic.",
+        "button": "Export Configuration"
+      },
+      "rag": {
+        "label": "RAG",
+        "badge": "Knowledge-Powered",
+        "title": "Semantic Knowledge Management Powered by Custom Data",
+        "description": "Teach your agents your own documents (PDF, Web, Text) with built-in vector database support based on PostgreSQL and pgvector. With integrated document loader and splitter components, create and query technical knowledge bases in seconds.",
+        "button": "Setup RAG"
+      },
+      "lowCode": {
+        "label": "Low Code",
+        "badge": "Visual Builder",
+        "title": "AI Orchestration on Visual Canvas",
+        "description": "Design complex LLM chains, logical branching, and iterative processes using drag-and-drop. Maintain flexibility by adding special Python, JavaScript code blocks for advanced scenarios.",
+        "button": "Start Building"
+      }
+    }
+  },
+  "integrations": {
+    "ecosystem": "Ecosystem",
+    "heading": "Integrate AI into your own",
+    "headingHighlight": "workflows.",
+    "description": "The fast way to make AI truly work in your business",
+    "aiIntegrations": "Node Type",
+    "businessCases": "Multi-LLM Support",
+    "setupTime": "Deployment",
+    "setupTimeValue": "Docker Ready",
+    "exploreAll": "Explore all integrations"
+  },
+  "content": {
+    "heading": "Beyond Visual Design: Enterprise AI Orchestration Runtime System",
+    "description1": "KAI Flow is not just a visual design tool,",
+    "descriptionHighlight": "it's an advanced runtime infrastructure that executes your AI agents with peak performance.",
+    "description2": "Schedulers, event-based triggers, hybrid RAG processes, and multi-step reasoning capabilities are at the heart of the system.",
+    "description3": "Build and orchestrate internal operation tools, autonomous customer assistants, or data pipelines on the same common canvas.",
+    "realtimeTriggers": "Reactive and Event-Driven Infrastructure",
+    "realtimeTriggersDesc": "Automate workflows with Kafka topics, Webhooks, or intelligent schedulers. Let your agents react to events in the external world in real-time and autonomously.",
+    "modularLogic": "Stateful Execution with LangGraph",
+    "modularLogicDesc": "Each node in the graph maps directly to LangGraph nodes. Have absolute control over complex loops, dynamic branching, and state transitions."
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "description": "Things you need to know about KAI Flow",
+    "items": [
+      {
+        "question": "What is KAI Flow?",
+        "answer": "KAI Flow is an open-source, enterprise-grade AI agent orchestration platform built on the LangChain and LangGraph ecosystems. By combining LLM nodes, memory components, and advanced triggers (Kafka, Webhook, etc.) on a visual canvas, it allows you to bring autonomous assistants with complex logical flows to production without writing code (or by adding custom code)."
+      },
+      {
+        "question": "Which LLM providers does KAI Flow support?",
+        "answer": "KAI Flow supports all leading LLM providers in the industry including OpenAI, Anthropic (Claude), Google Gemini, Mistral, HuggingFace, and local models. Models can be configured directly from the visual interface; you can create hybrid flows by orchestrating different models at each step."
+      },
+      {
+        "question": "Do I need coding knowledge to use KAI Flow?",
+        "answer": "No. Thanks to the platform's 'low-code' philosophy, you can design complex workflows in seconds using drag-and-drop. However, the ability to add special Python logic (Custom Nodes) is also provided for advanced users, ensuring full flexibility and scalability."
+      },
+      {
+        "question": "How does RAG work in KAI Flow?",
+        "answer": "KAI Flow offers built-in vector database support using PostgreSQL and the pgvector extension. You can configure the complete RAG pipeline, which uploads and splits PDF, Web, and text documents and then allows the agent to query this data, via the visual canvas without needing any additional infrastructure setup."
+      },
+      {
+        "question": "How do I access the agents I deployed?",
+        "answer": "Every agent workflow is accessible as a REST endpoint through the FastAPI backend. You can also publish it as an embeddable chat widget on your website using the @kaiFlow/widget npm package."
+      },
+      {
+        "question": "How can I contribute to KAI Flow?",
+        "answer": "KAI Flow is open source. You can visit the GitHub repository to open issues, send pull requests, or develop new node types. You can review the CONTRIBUTING.md file for the contribution guide."
+      }
+    ]
+  },
+  "contributors": {
+    "heading": "Let's Build Together!",
+    "description": "Meet the wonderful people who make KAI Flow possible.",
+    "loading": "Loading...",
+    "recentStargazers": "Recent Stargazers",
+    "stargazersDescription": "Thanks to everyone who starred the project!",
+    "starOnGithub": "Star on GitHub",
+    "stars": "Stars",
+    "stargazers": "Stargazers",
+    "starred": "Starred"
+  },
+  "footer": {
+    "copyright": "© {year} Kafein. All rights reserved",
+    "poweredBy": "Powered by"
+  },
+  "demoForm": {
+    "title": "Request a Demo",
+    "description": "Discover how KAI Flow AI can transform your workflows. Fill out the form below and our team will contact you within 24 hours.",
+    "personalInfo": "Personal Information",
+    "companyDetails": "Company Details",
+    "interests": "What interests you?",
+    "tellMore": "Tell us more",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "workEmail": "Work Email",
+    "jobTitle": "Job Title",
+    "country": "Country",
+    "phoneNumber": "Phone Number",
+    "companyName": "Company Name",
+    "companySize": "Company Size",
+    "selectSize": "Select size",
+    "companySizes": {
+      "1-10": "1-10",
+      "11-50": "11-50",
+      "51-200": "51-200",
+      "201-500": "201-500",
+      "500+": "500+"
+    },
+    "interests_options": {
+      "workManagement": "Work and project management",
+      "salesCRM": "Sales and CRM",
+      "productManagement": "Product management",
+      "softwareDevelopment": "Software development",
+      "productSoftwareDevelopment": "Product and software development",
+      "emailMarketing": "Email marketing",
+      "agencyFactory": "Agency Factory",
+      "ticketingServiceManagement": "Ticketing and service management",
+      "other": "Other"
+    },
+    "tellMoreQuestion": "How do you plan to use KAI Flow?",
+    "tellMorePlaceholder": "Tell us about your use case, team size, current challenges...",
+    "newsletter": "I would like to be informed about campaigns and updates.",
+    "privacy": "I consent to the processing of the personal data I shared within the scope of the Clarification Text. I reserve the right to withdraw my consent at any time.",
+    "clarificationText": "Clarification Text",
+    "recaptcha": "This site is protected by reCAPTCHA.",
+    "privacyLink": "Privacy",
+    "termsLink": "Terms",
+    "submitButton": "Request a Demo",
+    "successTitle": "Successfully Submitted!",
+    "successMessage": "Your request has been received. Our team will contact you within 24 hours to schedule a meeting.",
+    "successSubtext": "Thank you for your interest in KAI Flow."
+  }
+}

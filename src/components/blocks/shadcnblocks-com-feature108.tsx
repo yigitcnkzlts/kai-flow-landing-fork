@@ -103,19 +103,19 @@ const Feature108 = ({
           <p className="text-white/70">{description}</p>
         </div>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
-          <TabsList className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:gap-10 bg-transparent border-none">
+          <TabsList className="grid grid-cols-2 gap-3 max-w-2xl mx-auto sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-4 md:gap-10 bg-transparent border-none">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white/70 hover:text-white data-[state=active]:bg-white/10 data-[state=active]:text-white border-2 border-white/30 data-[state=active]:border-purple-400/60 transition-all duration-300"
+                className="flex items-center justify-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-white/70 hover:text-white data-[state=active]:bg-white/10 data-[state=active]:text-white border-2 border-white/30 data-[state=active]:border-purple-400/60 transition-all duration-300"
               >
                 {tab.icon} {tab.label}
               </TabsTrigger>
             ))}
           </TabsList>
           <div className="mx-auto mt-8 max-w-screen-xl rounded-3xl p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 overflow-hidden">
-          <div className="rounded-[calc(1.5rem-3px)] bg-black/95 p-8 pb-16 sm:p-10 sm:pb-20 md:p-12 md:pb-24 lg:p-16 lg:pb-28 overflow-hidden h-[400px] sm:h-[450px] lg:h-[500px] flex items-center justify-center">
+          <div className="rounded-[calc(1.5rem-3px)] bg-black/95 p-8 pb-16 sm:p-10 sm:pb-20 md:p-12 md:pb-24 lg:p-16 lg:pb-28 overflow-visible min-h-[600px] sm:min-h-[450px] lg:min-h-[500px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               {activeContent && (
                 <motion.div
@@ -124,7 +124,7 @@ const Feature108 = ({
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                  className="grid place-items-center gap-6 sm:gap-10 lg:grid-cols-2 lg:gap-8 h-full w-full"
+                  className="grid place-items-start gap-6 sm:gap-10 lg:grid-cols-2 lg:gap-8 w-full"
                 >
                   <div className="flex flex-col gap-5">
                     <Badge
@@ -140,14 +140,14 @@ const Feature108 = ({
                       {activeContent.description}
                     </p>
                   </div>
-                  <div className="rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-full sm:w-auto">
-                    <div className="rounded-[calc(1rem-3px)] bg-black/95 w-full sm:w-auto overflow-hidden">
+                  <div className="rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-full">
+                    <div className="rounded-[calc(1rem-3px)] bg-black/95 w-full overflow-hidden">
                       <Image
                         src={activeContent.imageSrc}
                         alt={activeContent.imageAlt}
                         width={800}
                         height={600}
-                        className="rounded-[calc(1rem-3px)] max-h-[30vh] sm:max-h-[35vh] lg:max-h-[40vh] w-full sm:w-auto object-contain"
+                        className="rounded-[calc(1rem-3px)] w-full h-auto object-contain"
                         priority={false}
                       />
                     </div>

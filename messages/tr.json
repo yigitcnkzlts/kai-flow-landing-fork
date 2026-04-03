@@ -1,5 +1,6 @@
 {
   "header": {
+    "docs": "Dökümantasyon",
     "features": "Özellikler",
     "integrations": "Entegrasyonlar",
     "content": "İçerik",
@@ -30,10 +31,10 @@
         "button": "Sohbeti Deneyin"
       },
       "export": {
-        "label": "Dışa Aktar",
-        "badge": "İş Akışı Dışa Aktarımı",
-        "title": "Agent konfigürasyonlarını paylaşın ve yeniden kullanın.",
-        "description": "Karmaşık ajan grafiklerinizi taşınabilir JSON formatında dışa aktarın. İş akışlarınızı takımlar arasında paylaşın veya farklı projeler arasında kolayca taşıyın. Ajanlarınız, tüm konfigürasyon ve çalışma mantıklarıyla birlikte her yere sizinle gelir.",
+        "label": "Dağıt",
+        "badge": "Sınırsız Dağıtım & Paylaşım",
+        "title": "Geliştirdiğiniz Ajanları Dünyaya Açın",
+        "description": "Karmaşık ajan grafiklerinizi ister taşınabilir JSON bundle'ı olarak dışa aktarın, ister web sitenize entegre edilebilir bir asistan (Widget) olarak yayınlayın. Webhook, Zamanlanmış Görevler, Kafka ve Docker desteğiyle ajanlarınızı her platformda canlıya alın. Tüm konfigürasyon, hafıza ve zeka artık her yerde sizinle.",
         "button": "Konfigürasyonu Dışa Aktar"
       },
       "rag": {
@@ -44,7 +45,7 @@
         "button": "RAG Kurun"
       },
       "lowCode": {
-        "label": "Düşük Kod",
+        "label": "Az Kod",
         "badge": "Görsel Oluşturucu",
         "title": "Görsel Kanvas Üzerinde AI Orkestrasyonu",
         "description": "Karmaşık LLM zincirlerini, mantıksal dallanmaları ve döngüsel süreçleri sürükle-bırak yöntemiyle tasarlayın. İleri düzey senaryolar için özel Python, JavaScript kod blokları ekleyerek esnekliğinizi koruyun.",

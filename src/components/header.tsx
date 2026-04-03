@@ -21,6 +21,7 @@ export const HeroHeader = () => {
     { name: t("content"), href: "#content" },
     { name: t("faq"), href: "#faq" },
     { name: t("contributors"), href: "#contributors" },
+    { name: t("docs"), href: "/docs" },
   ];
 
   const { scrollYProgress } = useScroll();

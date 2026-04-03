@@ -1,0 +1,4 @@
+/* Hide the drawer toggle button but keep other header buttons (like version selector) visible */
+label.md-header__button.md-icon[for="__drawer"] {
+    display: none !important;
+}

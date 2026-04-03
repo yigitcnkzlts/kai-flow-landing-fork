@@ -259,9 +259,7 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
 
     setIsSubmitting(true);
 
-    const backendBaseUrl =
-      process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
-    const apiUrl = `${backendBaseUrl.replace(/\/$/, "")}/api/demo-request`;
+    const apiUrl = "/api/demo-request/";
 
     try {
       console.log('Starting form submission...');
@@ -347,21 +345,9 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
         setErrors({ submit: errorMessage });
       }
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "An error occurred";
-      console.error('Network/Fetch error:', errorMessage);
-      console.error('Full error object:', error);
+      console.error('Form submission error:', error);
       
-      // More descriptive error message for user
-      let userMessage = "Failed to connect to server";
-      if (errorMessage.includes("Failed to fetch")) {
-        userMessage = `Cannot reach backend at ${backendBaseUrl}. Make sure the backend server is running.`;
-      } else if (errorMessage.includes("CORS")) {
-        userMessage = "CORS error: Backend rejected the request";
-      } else if (errorMessage.includes("TypeError")) {
-        userMessage = "Network error: Please check your internet connection";
-      }
-      
-      setErrors({ submit: userMessage });
+      setErrors({ submit: "Something went wrong. Please try again later." });
     } finally {
       setIsSubmitting(false);
     }

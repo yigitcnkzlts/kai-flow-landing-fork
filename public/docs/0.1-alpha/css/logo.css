@@ -1,0 +1,42 @@
+:root {
+    --md-header-height: 72px !important;
+}
+
+.md-header {
+    height: var(--md-header-height) !important;
+}
+
+.md-header__button.md-logo img {
+    height: 52px !important; 
+    min-height: 52px !important;
+    width: auto !important;
+    
+    display: block;
+}
+
+.md-header__button.md-logo {
+    height: auto !important; 
+    
+    margin-right: 16px !important; 
+    
+    display: flex;
+    align-items: center;
+}
+
+.md-header__title {
+    display: flex !important;
+    align-items: center !important;
+    
+    font-weight: 700 !important;
+    font-size: 20px !important;
+}
+
+@media screen and (max-width: 76.1875em) {
+    :root {
+        --md-header-height: 60px !important;
+    }
+    .md-header__button.md-logo img {
+        height: 40px !important;
+        min-height: 40px !important;
+    }
+}

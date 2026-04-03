@@ -1,5 +1,6 @@
 {
   "header": {
+    "docs": "Docs",
     "features": "Features",
     "integrations": "Integrations",
     "content": "Content",
@@ -30,10 +31,10 @@
         "button": "Try Chat"
       },
       "export": {
-        "label": "Export",
-        "badge": "Workflow Export",
-        "title": "Share and reuse agent configurations.",
-        "description": "Export your complex agent graphs in portable JSON format. Share your workflows between teams or easily move them between different projects. Your agents come with you everywhere, along with all configurations and operation logic.",
+        "label": "Distribute",
+        "badge": "Unlimited Distribution & Sharing",
+        "title": "Open Your Developed Agents to the World",
+        "description": "Export your complex agent graphs as a portable JSON bundle or publish them as an assistant (Widget) that can be integrated into your website. Bring your agents live on every platform with support for Webhook, Scheduled Tasks, Kafka, and Docker. All configurations, memory, and intelligence are now with you everywhere.",
         "button": "Export Configuration"
       },
       "rag": {

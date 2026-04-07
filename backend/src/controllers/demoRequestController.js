@@ -113,15 +113,58 @@ export const createDemoRequest = async (req, res) => {
     console.log('Collection Name:', DemoRequest.collection.name);
 
     // Validate required fields
-    if (!fullName || !email || !phone || !acceptedKvkk) {
-      console.error('Validation failed: Missing required fields');
-      console.error('   - fullName:', fullName ? 'OK' : 'MISSING');
-      console.error('   - email:', email ? 'OK' : 'MISSING');
-      console.error('   - phone:', phone ? 'OK' : 'MISSING');
-      console.error('   - acceptedKvkk:', acceptedKvkk ? 'OK' : 'MISSING');
+    const validationErrors = [];
+    
+    if (!fullName || !fullName.trim()) {
+      validationErrors.push('Full name is required');
+    } else if (fullName.trim().length < 2) {
+      validationErrors.push('Full name must be at least 2 characters');
+    }
+    
+    if (!email || !email.trim()) {
+      validationErrors.push('Email is required');
+    } else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      validationErrors.push('Please provide a valid email address');
+    }
+    
+    if (!phone || !phone.trim()) {
+      validationErrors.push('Phone number is required');
+    } else if (phone.replace(/\D/g, '').length < 7) {
+      validationErrors.push('Phone number must be at least 7 digits');
+    }
+    
+    if (!company || !company.trim()) {
+      validationErrors.push('Company name is required');
+    } else if (company.trim().length < 2) {
+      validationErrors.push('Company name must be at least 2 characters');
+    }
+    
+    if (!jobTitle || !jobTitle.trim()) {
+      validationErrors.push('Job title is required');
+    } else if (jobTitle.trim().length < 2) {
+      validationErrors.push('Job title must be at least 2 characters');
+    }
+    
+    if (!country || !country.trim()) {
+      validationErrors.push('Country is required');
+    }
+    
+    if (!companySize) {
+      validationErrors.push('Company size is required');
+    } else if (!['1-10', '11-50', '51-200', '201-500', '500+'].includes(companySize)) {
+      validationErrors.push('Invalid company size');
+    }
+    
+    if (acceptedKvkk !== true) {
+      validationErrors.push('Privacy policy acceptance is required');
+    }
+
+    if (validationErrors.length > 0) {
+      console.error('Validation failed:', validationErrors);
       return res.status(400).json({
         success: false,
-        message: 'Missing required fields: fullName, email, phone, acceptedKvkk',
+        message: 'Validation failed',
+        errors: validationErrors,
       });
     }
 

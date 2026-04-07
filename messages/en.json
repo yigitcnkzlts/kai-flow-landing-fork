@@ -165,6 +165,19 @@
     "submitButton": "Request a Demo",
     "successTitle": "Successfully Submitted!",
     "successMessage": "Your request has been received. Our team will contact you within 24 hours to schedule a meeting.",
-    "successSubtext": "Thank you for your interest in KAI Flow."
+    "successSubtext": "Thank you for your interest in KAI Flow.",
+    "errors": {
+      "required": "This field is required",
+      "minLength": "Must be at least {min} characters",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid phone number (at least 7 digits)",
+      "privacyRequired": "You must accept the privacy policy to continue",
+      "recaptchaFailed": "reCAPTCHA verification failed. Please refresh the page and try again.",
+      "validationError": "Please check your form inputs and try again",
+      "serverError": "Something went wrong. Please try again later.",
+      "networkError": "Network error. Please check your connection and try again.",
+      "connectionError": "Unable to connect to the server. Please try again later.",
+      "databaseError": "Database connection failed. Please try again later."
+    }
   }
 }

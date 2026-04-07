@@ -165,6 +165,19 @@
     "submitButton": "Demo Talep Et",
     "successTitle": "Başarıyla Gönderildi!",
     "successMessage": "Talebiniz alındı. Ekibimiz 24 saat içinde sizinle görüşme sağlamak için iletişime geçecektir.",
-    "successSubtext": "KAI Flow'a ilginiz için teşekkür ederiz."
+    "successSubtext": "KAI Flow'a ilginiz için teşekkür ederiz.",
+    "errors": {
+      "required": "Bu alan zorunludur",
+      "minLength": "En az {min} karakter olmalıdır",
+      "invalidEmail": "Geçerli bir e-posta adresi giriniz",
+      "invalidPhone": "Geçerli bir telefon numarası giriniz (en az 7 rakam)",
+      "privacyRequired": "Devam etmek için gizlilik politikasını kabul etmelisiniz",
+      "recaptchaFailed": "reCAPTCHA doğrulaması başarısız oldu. Lütfen sayfayı yenileyip tekrar deneyin.",
+      "validationError": "Lütfen form girişlerinizi kontrol edip tekrar deneyin",
+      "serverError": "Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin.",
+      "networkError": "Ağ hatası. Lütfen bağlantınızı kontrol edip tekrar deneyin.",
+      "connectionError": "Sunucuya bağlanılamadı. Lütfen daha sonra tekrar deneyin.",
+      "databaseError": "Veritabanı bağlantısı başarısız oldu. Lütfen daha sonra tekrar deneyin."
+    }
   }
 }

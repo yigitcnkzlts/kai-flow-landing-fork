@@ -51,7 +51,7 @@ function triggerConfetti() {
     });
   }
 
-  let animationId: number;
+  let animationId: number | null = null;
 
   function animate() {
     if (!ctx) return;
@@ -78,6 +78,9 @@ function triggerConfetti() {
     if (particles.length > 0) {
       animationId = requestAnimationFrame(animate);
     } else {
+      if (animationId !== null) {
+        cancelAnimationFrame(animationId);
+      }
       document.body.removeChild(canvas);
     }
   }
@@ -234,17 +237,62 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    if (!formData.firstName.trim()) newErrors.firstName = "Required";
-    if (!formData.lastName.trim()) newErrors.lastName = "Required";
-    if (!formData.email.trim()) newErrors.email = "Required";
-    else if (!validateEmail(formData.email)) newErrors.email = "Invalid email";
-    if (!formData.jobTitle.trim()) newErrors.jobTitle = "Required";
-    if (!formData.country) newErrors.country = "Required";
-    if (!formData.phone.trim()) newErrors.phone = "Required";
-    else if (!validatePhone(formData.phone)) newErrors.phone = "Invalid phone number";
-    if (!formData.companyName.trim()) newErrors.companyName = "Required";
-    if (!formData.companySize) newErrors.companySize = "Required";
-    if (!formData.privacyConsent) newErrors.privacyConsent = "Required";
+    // First name validation
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = t("errors.required");
+    } else if (formData.firstName.trim().length < 2) {
+      newErrors.firstName = t("errors.minLength", { min: 2 });
+    }
+
+    // Last name validation
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = t("errors.required");
+    } else if (formData.lastName.trim().length < 2) {
+      newErrors.lastName = t("errors.minLength", { min: 2 });
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = t("errors.required");
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = t("errors.invalidEmail");
+    }
+
+    // Job title validation
+    if (!formData.jobTitle.trim()) {
+      newErrors.jobTitle = t("errors.required");
+    } else if (formData.jobTitle.trim().length < 2) {
+      newErrors.jobTitle = t("errors.minLength", { min: 2 });
+    }
+
+    // Country validation
+    if (!formData.country) {
+      newErrors.country = t("errors.required");
+    }
+
+    // Phone validation
+    if (!formData.phone.trim()) {
+      newErrors.phone = t("errors.required");
+    } else if (!validatePhone(formData.phone)) {
+      newErrors.phone = t("errors.invalidPhone");
+    }
+
+    // Company name validation
+    if (!formData.companyName.trim()) {
+      newErrors.companyName = t("errors.required");
+    } else if (formData.companyName.trim().length < 2) {
+      newErrors.companyName = t("errors.minLength", { min: 2 });
+    }
+
+    // Company size validation
+    if (!formData.companySize) {
+      newErrors.companySize = t("errors.required");
+    }
+
+    // Privacy consent validation
+    if (!formData.privacyConsent) {
+      newErrors.privacyConsent = t("errors.privacyRequired");
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -253,7 +301,21 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Clear previous submit errors
+    setErrors((prev) => {
+      const { submit, ...rest } = prev;
+      return rest;
+    });
+
+    // Validate form
     if (!validateForm()) {
+      // Scroll to first error
+      if (contentRef.current) {
+        const firstError = contentRef.current.querySelector('[class*="border-red"]');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
       return;
     }
 
@@ -276,19 +338,19 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
           console.log('reCAPTCHA token obtained');
         } catch (recaptchaError) {
           console.error('reCAPTCHA execution failed:', recaptchaError);
-          setErrors({ submit: 'reCAPTCHA verification failed. Please refresh the page and try again.' });
+          setErrors({ submit: t("errors.recaptchaFailed") });
           setIsSubmitting(false);
           return;
         }
-      } else {}
+      }
 
       const payload = {
-        fullName: `${formData.firstName} ${formData.lastName}`,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.companyName,
-        jobTitle: formData.jobTitle,
-        message: formData.message,
+        fullName: `${formData.firstName.trim()} ${formData.lastName.trim()}`,
+        email: formData.email.trim().toLowerCase(),
+        phone: formData.phone.trim(),
+        company: formData.companyName.trim(),
+        jobTitle: formData.jobTitle.trim(),
+        message: formData.message.trim(),
         country: formData.country,
         companySize: formData.companySize,
         interests: formData.interests,
@@ -314,7 +376,8 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
       const responseData = await response.json();
       console.log('Response data:', JSON.stringify(responseData, null, 2));
 
-      if (response.ok && responseData.success) {
+      // Check for success
+      if (response.ok && responseData.success === true) {
         console.log('Success! Demo request saved to MongoDB');
         triggerConfetti();
         setSubmitSuccess(true);
@@ -332,6 +395,8 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
           newsletter: false,
           privacyConsent: false,
         });
+        setEmailValid(null);
+        setPhoneValid(null);
         setErrors({});
 
         setTimeout(() => {
@@ -340,15 +405,33 @@ export function DemoRequestModal({ isOpen, onClose }: DemoRequestModalProps) {
         }, 2000);
       } else {
         // Backend returned an error
-        const errorMessage = responseData?.message || responseData?.error || `Server error: ${response.status}`;
+        let errorMessage = t("errors.serverError");
+        
+        if (responseData?.message) {
+          errorMessage = responseData.message;
+        } else if (responseData?.error) {
+          errorMessage = responseData.error;
+        } else if (responseData?.errors && Array.isArray(responseData.errors)) {
+          errorMessage = responseData.errors.join(', ');
+        } else if (response.status === 400) {
+          errorMessage = t("errors.validationError");
+        } else if (response.status === 503) {
+          errorMessage = t("errors.databaseError");
+        }
+        
         console.error('Backend error:', errorMessage);
         setErrors({ submit: errorMessage });
+        setIsSubmitting(false);
       }
     } catch (error) {
       console.error('Form submission error:', error);
       
-      setErrors({ submit: "Something went wrong. Please try again later." });
-    } finally {
+      let errorMessage = t("errors.networkError");
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        errorMessage = t("errors.connectionError");
+      }
+      
+      setErrors({ submit: errorMessage });
       setIsSubmitting(false);
     }
   };
